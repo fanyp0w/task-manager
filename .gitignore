@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Local runtime data
+tasks.json
+
+# Environment
+.env
+.env.*
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
