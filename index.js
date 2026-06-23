@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const { createRateLimiter, createLogger } = require('./middleware');
-const { getAllTasks, getTaskById, createTask, updateTask, deleteTask, getStats, seedDatabase } = require('./tasks');
+const { getAllTasks, getTaskById, createTask, updateTask, deleteTask, getStats } = require('./tasks');
 
 const app = express();
 const PORT = 3000;
@@ -85,7 +85,6 @@ app.delete('/api/tasks/:id', async (req, res) => {
 });
 
 const start = async () => {
-  await seedDatabase();
   app.listen(PORT, () => {
     console.log(`\nСервер запущен: http://localhost:${PORT}\n`);
   });

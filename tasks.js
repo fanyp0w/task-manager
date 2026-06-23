@@ -84,17 +84,4 @@ const getStats = async () => {
   }, { total: 0, done: 0, pending: 0, byPriority: {} });
 };
 
-// PROMISE.ALL: создаём несколько задач параллельно, не по очереди
-const seedDatabase = async () => {
-  const existing = await readTasks();
-  if (existing.length > 0) return;
-  await Promise.all([
-    createTask({ title: 'Изучить замыкания в JS', priority: 'high' }),
-    createTask({ title: 'Разобраться с async/await', priority: 'high' }),
-    createTask({ title: 'Сделать CRUD на Express', priority: 'medium' }),
-    createTask({ title: 'Написать middleware', priority: 'medium' }),
-    createTask({ title: 'Задеплоить проект', priority: 'low' })
-  ]);
-};
-
-module.exports = { getAllTasks, getTaskById, createTask, updateTask, deleteTask, getStats, seedDatabase };
+module.exports = { getAllTasks, getTaskById, createTask, updateTask, deleteTask, getStats };
